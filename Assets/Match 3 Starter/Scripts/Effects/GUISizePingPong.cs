@@ -13,13 +13,11 @@ public class GUISizePingPong : MonoBehaviour {
 		_rectTransform = GetComponent<RectTransform>();
 		StartCoroutine(PingPongSize());
 	}
-
-	// Change size down to minScale then back up to max scale
+	
 	IEnumerator PingPongSize() {
 		Vector3 startingScale = _rectTransform.localScale;
 		Vector3 currentScale = startingScale;
 		
-		// How much to change the scale each iteration
 		Vector3 changeScale = new Vector3(.01f, .01f, .01f);
 		bool shrink = true;
 

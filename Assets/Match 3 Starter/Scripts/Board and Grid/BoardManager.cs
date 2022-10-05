@@ -37,6 +37,7 @@ public class BoardManager : MonoBehaviour {
 				_tiles[x, y] = newTile;
 				newTile.transform.parent = transform;
 				List<Sprite> possibleCharacters = new List<Sprite>();
+				
 				//виключаю можливість створення одинакових тайлів при створенні ігрового поля
 				possibleCharacters.AddRange(characters);
 				possibleCharacters.Remove(previousLeft[y]);
