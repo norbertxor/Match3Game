@@ -37,4 +37,4 @@ public class GUISizePingPong : MonoBehaviour {
 			yield return new WaitForSeconds(changeDelay);
 		}
 	}
-}
+} //end

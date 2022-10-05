@@ -16,4 +16,4 @@ public class SFXManager : MonoBehaviour {
 	public void PlaySFX(Clip audioClip) {
 		_sfx[(int)audioClip].Play();
 	}
-}
+} //end

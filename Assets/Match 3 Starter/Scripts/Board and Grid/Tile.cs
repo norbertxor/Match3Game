@@ -18,18 +18,18 @@ public class Tile : MonoBehaviour {
 	}
 
 	private void Select() {
-		_isSelected = true;
-		_render.color = selectedColor;
+		_isSelected          = true;
+		_render.color        = selectedColor;
 		transform.localScale = new Vector3(.35f, .35f, .35f);
-		previousSelected = gameObject.GetComponent<Tile>();
+		previousSelected     = gameObject.GetComponent<Tile>();
 		SFXManager.instance.PlaySFX(Clip.Select);
 	}
 
 	private void Deselect() {
-		_isSelected = false;
+		_isSelected          = false;
 		transform.localScale = new Vector3(.3f, .3f, .3f);
-		_render.color = Color.white;
-		previousSelected = null;
+		_render.color        = Color.white;
+		previousSelected     = null;
 	}
 
 	private void OnMouseDown() {
@@ -56,6 +56,7 @@ public class Tile : MonoBehaviour {
 		if (_render.sprite == forSwap.sprite) return;
 		(forSwap.sprite, _render.sprite) = (_render.sprite, forSwap.sprite);
 		SFXManager.instance.PlaySFX(Clip.Swap);
+		GUIManager.instance.MoveCounter--;
 	}
 
 	private GameObject GetAdjacent(Vector2 castDir) {
@@ -99,10 +100,12 @@ public class Tile : MonoBehaviour {
 			return;
 		
 		ClearMatch(new Vector2[2]{Vector2.left, Vector2.right});
-		ClearMatch(new Vector2[]{Vector2.up, Vector2.down});
+		ClearMatch(new Vector2[2]{Vector2.up, Vector2.down});
 		if (_matchFound) {
 			_render.sprite = null;
 			_matchFound = false;
+			StopCoroutine(BoardManager.instance.FindNullTiles());
+			StartCoroutine(BoardManager.instance.FindNullTiles());
 			SFXManager.instance.PlaySFX(Clip.Clear);
 		}
 	}

@@ -23,7 +23,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "rider.run.widget.enabled.cache": "false",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -68,7 +68,7 @@
       <workItem from="1661419431727" duration="7170000" />
       <workItem from="1661430095295" duration="1367000" />
       <workItem from="1662211997704" duration="758000" />
-      <workItem from="1664959556317" duration="2804000" />
+      <workItem from="1664959556317" duration="9656000" />
     </task>
     <servers />
   </component>
